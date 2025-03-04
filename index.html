@@ -6,10 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
     <style>
-* {
-  padding:0px;
-  margin:0px;    
-}   
 :root {
   --color-black: #000;
   --color-dark: #131313;
@@ -44,6 +40,22 @@ body {
   font-weight: 800;
 }
 
+.contact-info {
+  margin-top: 20px;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.contact-link {
+  color: var(--color-light);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-link:hover {
+  color: var(--color-primary);
+}
+
 .is--orange {
   color: var(--color-primary);
 }
@@ -59,14 +71,18 @@ body {
     
   </head>
   <body>
-    <section class="cloneable">
-      <p class="paragraph" style="margin-bottom: 10px;"><span class="is--orange">Coming Soon</span></p>
-      <p class="paragraph" id="countdown" style="margin-top: 0;"></p>
-    </section>
+    <section class="cloneable" style="transform: translateY(-5vh);">
+  <p class="paragraph" style="margin-bottom: 10px;"><span class="is--orange">Coming Soon</span></p>
+  <p class="paragraph" id="countdown" style="margin-top: 0;"></p>
+  <p class="contact-info">
+    <a href="mailto:contact@mirzawaqar.com" class="contact-link">contact@mirzawaqar.com</a> | 
+    <a href="https://wa.me/03117806309" class="contact-link">WhatsApp: 03117806309</a>
+  </p>
+</section>
     <script>
 document.addEventListener("DOMContentLoaded", () => {
   function updateCountdown() {
-    const targetDate = new Date("March 7, " + new Date().getFullYear() + " 00:00:00").getTime();
+    const targetDate = new Date("March 7, 2024 00:00:00").getTime();
     const now = new Date().getTime();
     const timeLeft = targetDate - now;
 
