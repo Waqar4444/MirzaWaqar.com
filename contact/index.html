@@ -253,6 +253,7 @@
               </div>
             </div>
             <!-- START CONTACT FORM DESIGN AREA -->
+            <!-- START CONTACT FORM DESIGN AREA -->
             <div class="col-lg-8">
               <div
                 class="contact-form contact-form-area wow fadeInUp delay-0-4s"
@@ -260,6 +261,7 @@
                 <form
                   id="contactForm"
                   class="contactForm"
+                  action="https://formsubmit.co/ajax/543ea12903bf2145246fbdf04b233eca"
                   method="POST"
                   novalidate
                 >
@@ -268,7 +270,7 @@
                   <input
                     type="hidden"
                     name="_next"
-                    value="https://mirzawaqar.com/contact?success=true"
+                    value="https://mirzawaqar.com/contact"
                   />
 
                   <div class="row">
@@ -330,6 +332,13 @@
               </div>
             </div>
 
+            <!-- Prevents Form Submission If JS is Disabled -->
+            <noscript>
+              <p style="color: red; font-weight: bold">
+                ⚠️ JavaScript is required to submit this form.
+              </p>
+            </noscript>
+
             <script>
               document
                 .getElementById("contactForm")
@@ -346,14 +355,11 @@
                   submitBtn.style.backgroundColor = "#ffcc00"; // Yellow while sending
                   btnText.textContent = "Sending...";
 
-                  fetch(
-                    "https://formsubmit.co/ajax/543ea12903bf2145246fbdf04b233eca",
-                    {
-                      method: "POST",
-                      body: new FormData(form),
-                      headers: { Accept: "application/json" },
-                    }
-                  )
+                  fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form),
+                    headers: { Accept: "application/json" },
+                  })
                     .then((response) => {
                       if (response.ok) {
                         formMessage.innerHTML =
